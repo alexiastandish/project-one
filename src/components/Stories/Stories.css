@@ -1,0 +1,30 @@
+.stories-section {
+  width: 30vw;
+  height: auto;
+  background: #cdcdcd;
+  margin: 30px;
+}
+
+.latest-stories {
+  padding: 0px 20px;
+}
+
+h1 {
+  color: white;
+  padding-left: 20px;
+}
+
+.stories-header-section {
+  background-color: navy;
+  height: 10vh;
+  width: 30vw;
+  padding-top: 10px;
+}
+
+.story-item {
+  margin: 20px;
+}
+
+.story {
+  margin-bottom: 5px;
+}

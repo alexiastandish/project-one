@@ -8,8 +8,8 @@ const getStory = (req, res) => {
       'https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=069097a483634bc5b1fa161c470c6b59'
     )
     .then(response => {
-      // response.slice(0, 3)
-      res.status(200).json(response.data.articles)
+      const stories = res.status(200).json(response.data.articles)
+      return stories
     })
 }
 

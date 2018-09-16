@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import './Stories.css'
 
 class Stories extends Component {
   constructor() {
@@ -7,51 +8,36 @@ class Stories extends Component {
 
     this.state = {
       stories: [],
-      // lastestThree: [],
     }
   }
 
   componentDidMount() {
+    // TODO: filter nulls
     axios.get('/api/stories').then(response => {
-      console.log(response.data)
-      this.setState({ stories: response.data })
+      const storiesOutput = response.data.slice(0, 3)
+      this.setState({ stories: storiesOutput })
     })
   }
 
   render() {
-    // const latestThree = this.state.stories.map(element => {
-    //   return <p>{element.title}</p>
-    // })
-
     return (
-      <div className="App">
-        <h1>Recent Tech News</h1>
+      <div className="stories-section">
+        <div className="stories-header-section">
+          <h1>Recent Tech News</h1>
+        </div>
         <ul className="latest-stories">
           <div className="storyItem">
-            {this.state.stories[0] && (
-              <a className="story" href={this.state.stories[0].source.name}>
-                {this.state.stories[0].author}
-              </a>
-            )}
-            {this.state.stories[0] && this.state.stories[0].description}
-          </div>
-
-          <div className="storyItem">
-            {this.state.stories[1] && (
-              <a className="story" href={this.state.stories[1].source.name}>
-                {this.state.stories[1].author}
-              </a>
-            )}
-            {this.state.stories[1] && this.state.stories[1].description}
-          </div>
-
-          <div className="storyItem">
-            {this.state.stories[2] && (
-              <a className="story" href={this.state.stories[2].source.name}>
-                {this.state.stories[2].author}
-              </a>
-            )}
-            {this.state.stories[2] && this.state.stories[2].description}
+            {this.state.stories.map(story => {
+              return (
+                <div className="storyItem" key={story.url}>
+                  <a className="story" href={story.url}>
+                    {story.title}
+                  </a>
+                  <br />
+                  {story.description}
+                </div>
+              )
+            })}
           </div>
         </ul>
       </div>

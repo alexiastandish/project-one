@@ -1,8 +1,9 @@
-let items = [],
-  id = 0
+const items = []
+let id = 0
 
 const getList = (req, res) => {
-  return res.status(200).json(items)
+  const listOutput = res.status(200).json(items)
+  return listOutput
 }
 
 const createItem = (req, res) => {
@@ -13,20 +14,15 @@ const createItem = (req, res) => {
   return res.status(200).send(items)
 }
 
-// const updateMessage = (req, res) => {
-//   const { text } = req.body
-//   const updateId = req.params.id
-//   const messageIndex = messages.findIndex(message => message.id == updateId)
-
-//   messages[messageIndex].text = text
-
-//   console.log(messages)
-
-//   return res.status(200).send(messages)
-// }
+const deleteItem = (req, res) => {
+  const deleteID = req.params.id
+  const itemIndex = items.findIndex(items => items.id === deleteID)
+  items.splice(itemIndex, 1)
+  return res.status(200).send(items)
+}
 
 module.exports = {
   getList,
   createItem,
-  // updateItem,
+  deleteItem,
 }

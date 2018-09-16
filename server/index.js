@@ -14,6 +14,7 @@ app.use(bodyParser.json())
 app.get('/api/stories', newsController.getStory)
 app.get('/api/items', listController.getList)
 app.post('/api/items', listController.createItem)
+app.delete('/api/items/:id', listController.deleteItem)
 
 // app.get('/api/stories', newsController.getLatestStories)
 
