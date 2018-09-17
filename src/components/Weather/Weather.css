@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 .weather-section {
-  margin-left: 60px;
+  margin-left: 70px;
   display: flex;
   align-content: center;
   margin-top: 20px;
@@ -19,4 +19,5 @@
 .weather-section p {
   color: #ffffff;
   margin-left: 20px;
+  font-family: 'Comfortaa', cursive;
 }

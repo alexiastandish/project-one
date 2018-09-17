@@ -10,7 +10,7 @@ function App() {
       <div className="header">
         <Weather />
         <div className="logo">
-          <img src="http://i63.tinypic.com/o5yeyt.png" />
+          <img src="http://i68.tinypic.com/155t6vm.png" />
         </div>
       </div>
 

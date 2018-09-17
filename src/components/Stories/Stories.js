@@ -25,10 +25,10 @@ class Stories extends Component {
           <h1>Recent Tech News</h1>
         </div>
         <ul className="latest-stories">
-          <div className="storyItem">
+          <div className="story-item">
             {this.state.stories.map(story => {
               return (
-                <div className="storyItem" key={story.url}>
+                <div className="story-item" key={story.url}>
                   <a className="story" href={story.url}>
                     {story.title}
                   </a>

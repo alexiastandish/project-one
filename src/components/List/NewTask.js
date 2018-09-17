@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './NewTask.css'
 
 class NewTask extends Component {
   constructor(props) {
@@ -29,15 +30,21 @@ class NewTask extends Component {
     return (
       <div className="item-list">
         {this.state.isEditing ? (
-          <div>
+          <div className="input-item">
             <input onChange={this.handleEditing} value={this.state.currentEditState} />
             <button onClick={() => this.handleSubmitChange(this.props.item.id)}>Submit Edit</button>
           </div>
         ) : (
-          <div>
+          <div className="item-and-buttons">
             <p>{this.props.item.text}</p>
-            <button onClick={this.props.removeItem}>Delete</button>
-            <button onClick={this.allowEditing}>Edit</button>
+            <div className="buttons" valign="middle">
+              <button className="delete-button" onClick={this.props.removeItem}>
+                <img src="http://i68.tinypic.com/23rjxp1.png" />
+              </button>
+              <button className="editing-buttons" onClick={this.allowEditing}>
+                Edit
+              </button>
+            </div>
           </div>
         )}
       </div>

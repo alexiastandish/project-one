@@ -59,30 +59,24 @@ class List extends Component {
     console.log('this.state', this.state)
     return (
       <div className="todo-section">
-        <div className="todo-header-section">
-          <h1>To Do List</h1>
-          <div className="todo-section">
-            <input
-              className="input-container"
-              value={this.state.text}
-              onChange={this.handleChange}
-            />
-            <button className="todo-button" onClick={this.addToList}>
-              Add to List
-            </button>
-            <div className="input-item">
-              {this.state.items.map(item => {
-                return (
-                  <NewTask
-                    key={item.id}
-                    item={item}
-                    removeItem={() => this.removeItem(item.id)}
-                    editTask={this.editTask}
-                  />
-                )
-              })}
-            </div>
-          </div>
+        <h1>To Do List</h1>
+        <div className="todo-section-section">
+          <input className="input-container" value={this.state.text} onChange={this.handleChange} />
+          <button className="todo-button" onClick={this.addToList}>
+            Add to List
+          </button>
+        </div>
+        <div className="input-item">
+          {this.state.items.map(item => {
+            return (
+              <NewTask
+                key={item.id}
+                item={item}
+                removeItem={() => this.removeItem(item.id)}
+                editTask={this.editTask}
+              />
+            )
+          })}
         </div>
       </div>
     )

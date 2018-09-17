@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Comfortaa:300,400,700');
-
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600');
 * {
   box-sizing: border-box;
 }
@@ -8,7 +8,7 @@
   width: 50vw;
   height: auto;
   background: #f5f9fa;
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 .todo-section h1 {
@@ -16,11 +16,8 @@
   padding-left: 20px;
   font-family: 'Comfortaa', cursive;
   font-size: 30px;
-}
-
-.todo-header-section {
-  height: 10vh;
-  padding-top: 10px;
+  margin-bottom: 0px;
+  margin-top: 20px;
 }
 
 .input-container {
@@ -34,15 +31,34 @@
   padding: 0px;
 }
 
-.input-item {
-  height: 15px;
-  width: 200px;
-  margin-left: 50px;
+.todo-section-section {
   margin-top: 10px;
-  margin-right: 10px;
-  padding: 0px;
+  display: flex;
+  align-items: center;
+  width: 40vw;
+  height: 8vh;
 }
 
 .todo-button {
-  background-color: #bfbfbf;
+  background-color: #bed6de;
+  border: none;
+  font-family: 'Comfortaa', cursive;
+  width: 100px;
+  margin-right: 10px;
+  font-size: 12px;
+  align-items: center;
+  height: 3vh;
+}
+
+.input-container {
+  width: 300px;
+  margin-left: 50px;
+  margin-right: 10px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  align-items: center;
+  margin-bottom: 10px;
+  height: 3vh;
+  color: #333;
+  padding-left: 10px;
 }
