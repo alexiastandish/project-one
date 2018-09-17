@@ -12,7 +12,6 @@ class Stories extends Component {
   }
 
   componentDidMount() {
-    // TODO: filter nulls
     axios.get('/api/stories').then(response => {
       const storiesOutput = response.data.slice(0, 3)
       this.setState({ stories: storiesOutput })

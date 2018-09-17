@@ -17,19 +17,29 @@ class NewTask extends Component {
   }
 
   handleEditing(event) {
-    this.setState({ text: event.target.value })
+    this.setState({ currentEditState: event.target.value })
+  }
+
+  handleSubmitChange(id) {
+    this.props.editTask(id, this.state.currentEditState)
+    this.setState({ isEditing: false })
   }
 
   render() {
     return (
       <div className="item-list">
         {this.state.isEditing ? (
-          <input onChange={this.handleEditing} value={this.state.currentEditState} />
+          <div>
+            <input onChange={this.handleEditing} value={this.state.currentEditState} />
+            <button onClick={() => this.handleSubmitChange(this.props.item.id)}>Submit Edit</button>
+          </div>
         ) : (
-          <p>{this.props.item.text}</p>
+          <div>
+            <p>{this.props.item.text}</p>
+            <button onClick={this.props.removeItem}>Delete</button>
+            <button onClick={this.allowEditing}>Edit</button>
+          </div>
         )}
-        <button onClick={this.props.removeItem}>Delete</button>
-        <button onClick={this.allowEditing}>Edit</button>
       </div>
     )
   }

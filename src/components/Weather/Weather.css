@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa:300,400,700');
+
+* {
+  box-sizing: border-box;
+}
+.weather-section {
+  margin-left: 60px;
+  display: flex;
+  align-content: center;
+  margin-top: 20px;
+}
+
+.weather-section h1 {
+  color: #78a4ad;
+  font-family: 'Comfortaa', cursive;
+  font-size: 20px;
+}
+
+.weather-section p {
+  color: #ffffff;
+  margin-left: 20px;
+}

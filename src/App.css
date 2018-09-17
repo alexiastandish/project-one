@@ -1,11 +1,56 @@
-.App {
-  margin: 100px;
+@import url('https://fonts.googleapis.com/css?family=Comfortaa:300,400,700');
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 .content {
-  display: flex;
-  margin: 20px;
+  background-image: url('http://i66.tinypic.com/k0lwu1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  margin: 100px;
+  font-family: 'Comfortaa', cursive;
+}
+
+.content {
   padding: 20px;
+}
+
+.main-section {
+  display: flex;
+  width: 95vw;
+  justify-content: space-around;
+  align-content: center;
+}
+
+.logo img {
+  width: 140px;
+  align-content: center;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  margin-right: 50px;
+}
+
+.header {
+  height: 10vh;
+  width: 95vw;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
 }
 
 /* .App-logo {

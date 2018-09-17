@@ -51,10 +51,8 @@ class List extends Component {
     axios.delete(`/api/items/${id}`).then(this.updateItemsState)
   }
 
-  editTask(item) {
-    axios.put(`/api/items/${item.id}`, item).then(response => {
-      console.log('response', response)
-    })
+  editTask(id, text) {
+    axios.put(`/api/items/${id}`, { text }).then(this.updateItemsState)
   }
 
   render() {
@@ -72,16 +70,18 @@ class List extends Component {
             <button className="todo-button" onClick={this.addToList}>
               Add to List
             </button>
-            {this.state.items.map(item => {
-              return (
-                <NewTask
-                  key={item.id}
-                  item={item}
-                  removeItem={() => this.removeItem(item.id)}
-                  editTask={this.editTask}
-                />
-              )
-            })}
+            <div className="input-item">
+              {this.state.items.map(item => {
+                return (
+                  <NewTask
+                    key={item.id}
+                    item={item}
+                    removeItem={() => this.removeItem(item.id)}
+                    editTask={this.editTask}
+                  />
+                )
+              })}
+            </div>
           </div>
         </div>
       </div>
