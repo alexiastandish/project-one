@@ -8,6 +8,7 @@ class Stories extends Component {
 
     this.state = {
       stories: [],
+      searchStories: [],
     }
   }
 
@@ -15,6 +16,11 @@ class Stories extends Component {
     axios.get('/api/stories').then(response => {
       const storiesOutput = response.data.slice(0, 3)
       this.setState({ stories: storiesOutput })
+    })
+
+    axios.get('/api/stories').then(response => {
+      const searchStoriesOutput = response.data
+      this.setState({ searchStories: searchStoriesOutput })
     })
   }
 

@@ -31,8 +31,17 @@ class NewTask extends Component {
       <div className="item-list">
         {this.state.isEditing ? (
           <div className="input-item">
-            <input onChange={this.handleEditing} value={this.state.currentEditState} />
-            <button onClick={() => this.handleSubmitChange(this.props.item.id)}>Submit Edit</button>
+            <input
+              className="edit-input"
+              onChange={this.handleEditing}
+              value={this.state.currentEditState}
+            />
+            <button
+              className="submit-button"
+              onClick={() => this.handleSubmitChange(this.props.item.id)}
+            >
+              Submit
+            </button>
           </div>
         ) : (
           <div className="item-and-buttons">

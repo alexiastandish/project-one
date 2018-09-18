@@ -49,6 +49,9 @@ class List extends Component {
   removeItem(id) {
     // console.log(id)
     axios.delete(`/api/items/${id}`).then(this.updateItemsState)
+    axios.get('/api/items').then(response => {
+      this.setState({ items: response.data })
+    })
   }
 
   editTask(id, text) {
@@ -56,6 +59,16 @@ class List extends Component {
   }
 
   render() {
+    let newList = this.state.items.map((element, index) => {
+      return (
+        <NewTask
+          key={element.id}
+          item={element}
+          removeItem={() => this.removeItem(index)}
+          editTask={this.editTask}
+        />
+      )
+    })
     console.log('this.state', this.state)
     return (
       <div className="todo-section">
@@ -67,16 +80,7 @@ class List extends Component {
           </button>
         </div>
         <div className="input-item">
-          {this.state.items.map(item => {
-            return (
-              <NewTask
-                key={item.id}
-                item={item}
-                removeItem={() => this.removeItem(item.id)}
-                editTask={this.editTask}
-              />
-            )
-          })}
+          <div className="new-list">{newList}</div>
         </div>
       </div>
     )

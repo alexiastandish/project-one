@@ -6,9 +6,10 @@
 
 .todo-section {
   width: 50vw;
-  height: auto;
+  height: 50vh;
   background: #f5f9fa;
   margin-top: 20px;
+  overflow-y: auto;
 }
 
 .todo-section h1 {

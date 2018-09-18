@@ -15,9 +15,11 @@ const createItem = (req, res) => {
 }
 
 const deleteItem = (req, res) => {
-  const deleteID = req.params.id
-  const itemIndex = items.findIndex(item => item.id === deleteID)
-  items.splice(itemIndex, 1)
+  // const deleteID = req.params.id
+  // const itemIndex = items.findIndex(item => item.id === deleteID)
+  items.splice(req.params.id, 1)
+  console.log('items', items)
+  console.log('req.params.id', req.params.id)
   return res.status(200).send(items)
 }
 
